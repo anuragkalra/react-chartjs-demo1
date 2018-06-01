@@ -9,6 +9,7 @@ class BTCinCirculation extends React.Component {
         labels : [],
         datasets : [{
           label : 'btc-in-circulation',
+          backgroundColor: 'rgb(0, 74, 124)',
           data : null
         }]
       }

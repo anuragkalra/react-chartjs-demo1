@@ -28,6 +28,7 @@ class MarketCapitalization extends React.Component {
             labels : xValues,
             datasets : [{
               label : 'market-cap',
+              backgroundColor: 'rgb(0, 74, 124)',
               data : yValues
             }]
           }

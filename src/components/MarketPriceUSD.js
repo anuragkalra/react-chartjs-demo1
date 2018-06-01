@@ -21,12 +21,13 @@ class MarketPriceUSD extends React.Component {
       .then(response => response.json())
       .then(result => {
         let xValues = result.values.map(e => e.x.toString())
-        let yValues = result.values.map(e => e.y)        
+        let yValues = result.values.map(e => e.y)
         this.setState({
           chartData : {
             labels : xValues,
             datasets : [{
               label : 'market-price-usd',
+              backgroundColor: 'rgb(0, 74, 124)',
               data : yValues
             }]
           }
