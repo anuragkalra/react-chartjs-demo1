@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import LineWrapper from './components/LineWrapper'
 import MarketPriceUSD from './components/MarketPriceUSD';
+import BTCinCirculation from './components/BTCinCirculation';
+import MarketCapitalization from './components/MarketCapitalization';
+import USDExchangeTradeVolume from './components/USDExchangeTradeVolume';
 
 class App extends Component {
   render() {
@@ -12,7 +14,10 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">Welcome to React</h1>
         </header>
+        <BTCinCirculation />
         <MarketPriceUSD />
+        <MarketCapitalization />
+        <USDExchangeTradeVolume />
       </div>
     );
   }

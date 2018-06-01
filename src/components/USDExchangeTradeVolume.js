@@ -1,14 +1,14 @@
 import React from 'react';
 import {Line} from 'react-chartjs-2';
 
-class MarketPriceUSD extends React.Component {
+class USDExchangeTradeVolume extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       chartData : {
         labels : [],
         datasets : [{
-          label : 'market-price-usd',
+          label : 'usd-exchange-trade-vol',
           data : null
         }]
       }
@@ -16,17 +16,17 @@ class MarketPriceUSD extends React.Component {
   }
 
   componentDidMount() {
-    const url = 'https://api.blockchain.info/charts/market-price?format=json&cors=true';
+    const url = 'https://api.blockchain.info/charts/total-bitcoins?format=json&cors=true';
     fetch(url)
       .then(response => response.json())
       .then(result => {
         let xValues = result.values.map(e => e.x.toString())
-        let yValues = result.values.map(e => e.y)        
+        let yValues = result.values.map(e => e.y)
         this.setState({
           chartData : {
             labels : xValues,
             datasets : [{
-              label : 'market-price-usd',
+              label : 'usd-exchange-trade-vol',
               data : yValues
             }]
           }
@@ -38,14 +38,13 @@ class MarketPriceUSD extends React.Component {
 
   render() {
     return (
-      <div className="MarketPriceUSD">
-        {this.state.mostRecent}
+      <div className="USDExchangeTradeVolume">
         <Line
           data={this.state.chartData}
           options={{
             title : {
               display : true,
-              text : 'Market Price (USD)',
+              text : 'USD Exchange Trade Volume',
               fontSize : 30
             }
           }}
@@ -55,4 +54,4 @@ class MarketPriceUSD extends React.Component {
   }
 }
 
-export default MarketPriceUSD;
+export default USDExchangeTradeVolume;
