@@ -16,7 +16,7 @@ class USDExchangeTradeVolume extends React.Component {
   }
 
   componentDidMount() {
-    const url = 'https://api.blockchain.info/charts/total-bitcoins?format=json&cors=true';
+    const url = 'https://api.blockchain.info/charts/trade-volume?format=json&cors=true';
     fetch(url)
       .then(response => response.json())
       .then(result => {
