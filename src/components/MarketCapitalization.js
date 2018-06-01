@@ -20,7 +20,6 @@ class MarketCapitalization extends React.Component {
     fetch(url)
       .then(response => response.json())
       .then(result => {
-        console.log(result.values)
         let xValues = result.values.map(e => e.x.toString())
         let yValues = result.values.map(e => e.y)
         this.setState({
@@ -28,7 +27,8 @@ class MarketCapitalization extends React.Component {
             labels : xValues,
             datasets : [{
               label : 'market-cap',
-              backgroundColor: 'rgb(0, 74, 124)',
+              borderColor: 'rgb(0, 74, 124, 0.8)',
+              backgroundColor: 'rgb(0, 74, 124, 0.2)',
               data : yValues
             }]
           }

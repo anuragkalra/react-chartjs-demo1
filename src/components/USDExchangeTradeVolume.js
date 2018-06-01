@@ -9,7 +9,8 @@ class USDExchangeTradeVolume extends React.Component {
         labels : [],
         datasets : [{
           label : 'usd-exchange-trade-vol',
-          backgroundColor: 'rgb(0, 74, 124)',
+          borderColor: 'rgba(0, 74, 124, 0.8)',
+          backgroundColor: 'rgba(0, 0, 0, 0)',          
           data : null
         }]
       }
